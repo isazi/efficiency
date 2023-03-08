@@ -1,0 +1,62 @@
+{
+  "name": "Effectiveness",
+  "version": "1.0",
+  "author": "Alessio Sclocco",
+  "description": "Running effectiveness",
+  "type": "feature",
+  "usage": "workout",
+  "modificationTime": 1672677829,
+  "in": [
+    {
+      "name": "Duration",
+      "source": "Activity/Move/-1/Duration/Current",
+      "type": "subscribe"
+    },
+    {
+      "name": "Distance",
+      "source": "Activity/Move/-1/Distance/Current",
+      "type": "subscribe"
+    },
+    {
+      "name": "Speed",
+      "source": "Activity/Move/-1/Speed/Current",
+      "type": "subscribe"
+    },
+    {
+      "name": "Power",
+      "source": "Activity/Move/-1/Power/Current",
+      "type": "subscribe"
+    },
+    {
+      "name": "Weight",
+      "source": "Settings/User/Weight",
+      "type": "get"
+    },
+    {
+      "name": "AveragePower",
+      "source": "Activity/Move/-1/Power/Avg",
+      "type": "subscribe"
+    }
+  ],
+  "out": [
+    {
+      "name": "effectiveness",
+      "log": true,
+      "shownName": "Running Effectiveness (RE)",
+      "format": "Distance_Fourdigits",
+      "inverted": false
+    },
+    {
+      "name": "ecor",
+      "log": true,
+      "shownName": "ECOR",
+      "format": "Distance_Fourdigits",
+      "inverted": false
+    }
+  ],
+  "template": [
+    {
+      "name": "t.html"
+    }
+  ]
+}

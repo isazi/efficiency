@@ -1,0 +1,42 @@
+<uiView>
+
+  <div id="suuntoplus">
+
+    <div class="cm-fg" style="width:100%;height:25%;">
+      <div class="sp-t-s p-hc" style="top:calc(60% - 50%e);">Effectiveness</div>
+    </div>
+
+    <!-- top left -->
+    <div class="cm-mid sp-t-s" style="top:calc(35% - 100%e);left:calc(26% - 50%e)">RE</div>
+    <div class="sp-d-m f-num" style="top:calc(43% - 50%e);left:calc(26% - 50%e)">
+      <eval input="/Zapp/{zapp_index}/Output/effectiveness" outputFormat="auto" default="--"/>
+    </div>
+
+    <!-- top right -->
+    <div class="f-ico" style="top:calc(35% - 100%e);left:calc(74% - 50%e)">&#xF102;</div>
+    <div class="sp-d-m f-num" style="top:calc(43% - 50%e);left:calc(74% - 50%e)">
+      <eval input="Activity/Move/-1/Distance/Current" outputFormat="Distance_Accurate" default="--" />
+    </div>
+
+    <!-- middle -->
+    <div class="p-hc sp-vc" style="top:calc(62% - 50%e)">
+      <span class="f-ico" style="padding-right:4px">&#xF108;</span>
+      <span class="sp-d-l f-num">
+        <eval input="Activity/Move/-1/Power/Avg" outputFormat="Power_Fourdigits" default="--" />
+      </span>
+    </div>
+
+    <!-- bottom middle -->
+    <div class="p-hc sp-vc" style="top:calc(87% - 50%e)">
+      <span class="f-ico" style="padding-right:4px">&#xF100;</span>
+      <span class="sp-d-m f-num">
+        <eval input="Activity/Move/-1/Duration/Current" outputFormat="Duration_Fourdigits" default="--" />
+      </span>
+    </div>
+
+    <!-- Zone gauge -->
+    <import src="#zone-g" />
+
+  </div>
+
+</uiView>
